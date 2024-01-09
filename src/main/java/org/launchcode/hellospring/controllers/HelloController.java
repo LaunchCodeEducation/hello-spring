@@ -33,7 +33,7 @@ public class HelloController {
         return "Hello, " + name + "!";
     }
 
-    @RequestMapping(value="hello", method = RequestMethod.POST)
+    @PostMapping("hello/hello")
     @ResponseBody
     public String helloPost(@RequestParam String name, @RequestParam String language) {
         if (name == null) {
@@ -72,7 +72,7 @@ public class HelloController {
     public String helloForm() {
         return "<html>" +
                     "<body>" +
-                        "<form action = '/hello' method = 'post'>" + // submit a request to /hello
+                        "<form action = 'hello/hello' method = 'post'>" + // submit a request to /hello
                             "<input type = 'text' name = 'name' >" +
                             "<br>" +
                             "<select name='language' id='lang-select'>" +
